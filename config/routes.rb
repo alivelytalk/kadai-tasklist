@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root to: 'tasks#index'
+  root to: 'tasks#index'
     
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
  
   resources :tasks
-  resources :users
+  resources :users, only: [:new, :create]
 end
 
 
